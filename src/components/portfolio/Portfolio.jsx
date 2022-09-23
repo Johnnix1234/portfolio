@@ -17,14 +17,14 @@ const data = [
     image: IMG2,
     title: "Services-rendering Web Application",
     github: " https://github.com/Johnnix1234/Novaswap ",
-    demo: "http://swapnova.netlify.app",
+    demo: "https://silvertech.netlify.app",
   },
   {
     id: 3,
     image: IMG3,
     title: "Crypto trading Web Application",
     github: "https://github.com/Johnnix1234/Silvertech",
-    demo: "https://silvertech.netlify.app",
+    demo: "http://swapnova.netlify.app",
   },
 ];
 const Portfolio = () => {

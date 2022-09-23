@@ -5,12 +5,14 @@ import { RiMessengerLine } from "react-icons/ri";
 import { BsWhatsapp } from "react-icons/bs";
 import emailjs from "emailjs-com";
 import { useRef } from "react";
+import { useState } from "react";
 const Contact = () => {
   const form = useRef();
+  const [message, setMessage] = useState(false);
 
   const sendEmail = (e) => {
     e.preventDefault();
-
+    setMessage(true);
     emailjs
       .sendForm(
         "service_nvur10n",
@@ -21,6 +23,7 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
+          setMessage(false);
         },
         (error) => {
           console.log(error.text);
@@ -73,9 +76,16 @@ const Contact = () => {
             placeholder="Your Message..."
             required
           ></textarea>
-          <button type="submit" className="btn btn-primary">
-            Send Message
-          </button>
+          {!message && (
+            <button type="submit" className="btn btn-primary">
+              Send Message
+            </button>
+          )}
+          {message && (
+            <button disabled className="btt">
+              Sent
+            </button>
+          )}
         </form>
       </div>
     </section>
